@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 3,
+      "firstName": "Britanicus",
+      "lastName": "Kashiya",
+      "email": "pusigalex@mailinator.com",
+      "mobile": "098663932",
+      "salary": 182
+    },
+    {
+      "id": 4,
+      "firstName": "Calista",
+      "lastName": "Desirae",
+      "email": "qucijabyqo@mailinator.com",
+      "mobile": "098736485",
+      "salary": 1000
+    },
+    {
+      "id": 5,
+      "firstName": "Slade",
+      "lastName": "Aaron",
+      "email": "xefycolado@mailinator.com",
+      "mobile": "098376450",
+      "salary": 693
+    },
+    {
+      "id": 6,
+      "firstName": "Kylian Mbape",
+      "lastName": "Armand",
+      "email": "qufede@mailinator.com",
+      "mobile": "098778686",
+      "salary": 949
+    },
+    {
+      "firstName": "Harriet",
+      "lastName": "Hayfa",
+      "email": "vobocopag@mailinator.com",
+      "mobile": "09875676",
+      "salary": 506,
+      "id": 7
+    },
+    {
+      "firstName": "Maite",
+      "lastName": "Samuel",
+      "email": "poda@mailinator.com",
+      "mobile": "Sylvia",
+      "salary": 522,
+      "id": 8
+    },
+    {
+      "firstName": "Lee",
+      "lastName": "Wyatt",
+      "email": "vehoc@mailinator.com",
+      "mobile": "Eric",
+      "salary": 709,
+      "id": 9
+    }
+  ]
+}

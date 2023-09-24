@@ -1,0 +1,84 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 class="page-title">Angular CRUD</h1>
+        <div class="d-flex">
+            <button class="btn btn-success" (click)="setToAdd()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Employee ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email ID</th>
+                <th scope="col">Mobile No.</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of data">
+              <td>{{ row.id }}</td>
+              <td>{{ row.firstName }}</td>
+              <td>{{ row.lastName }}</td>
+              <td>{{ row.email }}</td>
+              <td>{{ row.mobile }}</td>
+              <td>{{ row.salary }}</td>
+              <td>
+                <a href="#" (click)="onEdit(row)" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</a>
+                <a href="#" (click)="deleteEmployee(row)" class="btn btn-sm btn-danger mx-2">Delete</a>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" *ngIf="action === 'add'" id="exampleModalLabel">Add Employee</h5>
+          <h5 class="modal-title" *ngIf="action === 'edit'" id="exampleModalLabel">Update Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">First Name</label>
+                  <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                  <input type="text" formControlName="lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email ID</label>
+                  <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                  <input type="text" formControlName="mobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Salary</label>
+                  <input type="number" formControlName="salary" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button type="button" (click)="updateEmployeeDetails()" class="btn btn-primary">Edit</button> -->
+          <!-- <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary" *ngIf="isAddButtonVisible">Add</button>
+          <button type="button" (click)="updateEmployeeDetails()" class="btn btn-primary" *ngIf="isUpdateButtonVisible">Edit</button> -->
+          <button *ngIf="action === 'add'" type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button *ngIf="action === 'edit'" type="button" (click)="updateEmployeeDetails()" class="btn btn-primary">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
